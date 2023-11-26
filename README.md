@@ -13,7 +13,7 @@ This repository is a webapp that allow users to choose an image and apply some f
 3. Install the requirements with `pip install -r requirements.txt`
 4. Run the server with `python main.py`
 
-### Frontend - React - Typescript
+### Frontend - React - Typescript(Node 20.10.0)
 
 1. Install the dependencies with `yarn install`
-2. Run the server with `yarn start`
+2. Run the server with `yarn dev`
