@@ -4,18 +4,28 @@
   </h1>
   <mat-card>
     <mat-card-header>
-      <mat-card-title>
-        Please select an image from your device
-      </mat-card-title>
-      <mat-form-field>
+      <mat-form-field class="body-request">
         <mat-label>Process Type</mat-label>
         <mat-select>
-          <mat-option>
-
-          </mat-option>
+          @for (type of processorType; track $index) {
+            <mat-option
+              value="{{type.processor_name}}"
+              (onSelectionChange)="onSelectedProcessorType($event)"
+            >
+              {{type.processor_name}}
+            </mat-option>
+          }
         </mat-select>
       </mat-form-field>
-    </mat-card-header>
+      @if (twoValueProcessor.includes(selectedProcessorType)) {
+          <mat-label>C value</mat-label>
+          <mat-slider
+            max="1"
+            step="0.1"
+          ></mat-slider>
+      } @else {
+      }
+      </mat-card-header>
     <mat-card-content class="card-content">
       <input
         #fileUpload

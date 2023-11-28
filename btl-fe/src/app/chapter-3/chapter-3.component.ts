@@ -2,11 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Chapter3Service } from './chapter-3.service';
 import { HttpClient } from '@angular/common/http';
 import { environment as env } from '../../environments/environment';
-
-interface ImageProcess {
-  original_image?: string;
-  processed_image?: string;
-}
+import { ImageProcess } from './interface/image-process';
+import { ProcessorType } from './interface/processor-type';
 
 @Component({
   selector: 'app-chapter-3',
@@ -16,8 +13,21 @@ interface ImageProcess {
 export class Chapter3Component implements OnInit, OnDestroy{
 
   chapter3Hello: string = 'Loading...';
+  processorType : ProcessorType[] = [
+    { processor_name: 'negative' },
+    { processor_name: 'thresholding' },
+    { processor_name: 'logarithm' },
+    { processor_name: 'inverse-logarithm' }
+  ];
+  twoValueProcessor: string[] = [
+    'logarithm',
+    'inverse-logarithm'
+  ]
+
   fileName = '';
   imageProcess: ImageProcess = {};
+  selectedProcessorType: string = '';
+
   imageState: boolean = false;
   imageUrl = env.imageUrl;
 
@@ -54,4 +64,8 @@ export class Chapter3Component implements OnInit, OnDestroy{
     }
   }
 
+  onSelectedProcessorType(event: any): void {
+    this.selectedProcessorType = event.source.value;
+    console.log(this.selectedProcessorType);
+  }
 }
