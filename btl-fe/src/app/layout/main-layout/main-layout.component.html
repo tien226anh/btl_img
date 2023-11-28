@@ -9,11 +9,12 @@
     id="sidenav-container"
     >
     <mat-sidenav
+      id="sidenav"
       #sidenav
       mode="side"
       [(opened)]="opened"
     >
-      <mat-nav-list>
+      <mat-nav-list id="navlist">
         <a
           mat-list-item
           [routerLink]="'/'"

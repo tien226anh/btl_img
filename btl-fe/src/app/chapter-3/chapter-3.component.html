@@ -1,3 +1,46 @@
-<h1>
-  {{chapter3Hello}}
-</h1>
+<div>
+  <h1>
+    {{chapter3Hello}}
+  </h1>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        Please select an image from your device
+      </mat-card-title>
+      <mat-form-field>
+        <mat-label>Process Type</mat-label>
+        <mat-select>
+          <mat-option>
+
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+      <input
+        #fileUpload
+        type="file"
+        id="file-input"
+        (change)="onFileSelected($event)"
+      >
+      <div class="file-upload">
+        {{ fileName || 'No file selected yet.' }}
+        <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+          <mat-icon>attach_file</mat-icon>
+        </button>
+      </div>
+      <div class="result">
+        @if (imageState){
+          <div>
+            <p>Origin</p>
+            <img mat-card-image [src]="imageProcess['original_image']" alt="Selected image" class="image-process">
+          </div>
+          <div>
+            <p>Processed</p>
+            <img mat-card-image [src]="imageProcess['processed_image']" alt="Selected image" class="image-process">
+          </div>
+        }
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

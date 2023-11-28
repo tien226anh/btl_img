@@ -1,0 +1,39 @@
+#file-input
+{
+    display: none;
+}
+div
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  mat-card
+  {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .card-content
+    {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      .result
+      {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        img
+        {
+          width: 70%;
+        }
+      }
+    }
+  }
+}

@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
-import { LoginModule } from './login/login.module';
 import { HomeModule } from './home/home.module';
 import { Chapter3Module } from './chapter-3/chapter-3.module';
 
@@ -18,7 +17,6 @@ import { Chapter3Module } from './chapter-3/chapter-3.module';
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
-    LoginModule,
     HomeModule,
     Chapter3Module,
     BrowserAnimationsModule,

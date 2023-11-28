@@ -8,6 +8,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatGridListModule } from "@angular/material/grid-list";
+import { MatSelectModule } from "@angular/material/select";
 
 @NgModule({
   exports: [
@@ -20,6 +21,7 @@ import { MatGridListModule } from "@angular/material/grid-list";
     MatFormFieldModule,
     MatInputModule,
     MatGridListModule,
+    MatSelectModule,
   ],
 })
 
