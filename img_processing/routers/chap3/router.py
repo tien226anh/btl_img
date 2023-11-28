@@ -23,6 +23,11 @@ def process_image(file, image_processor, value):
     return result
 
 
+@router.get("/")
+async def hello_chapter3():
+    return {"message": "Hello Chapter 3"}
+
+
 @router.post("/")
 async def process_image_endpoint(
     processor_name: str = Form(...),
