@@ -4,6 +4,7 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 import { HomeComponent } from './home/home.component';
 import { Chapter3Component } from './chapter-3/chapter-3.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CenteredLayoutComponent } from './layout/centered-layout/centered-layout.component';
 
 const routes: Routes = [
   {
@@ -29,7 +30,11 @@ const routes: Routes = [
       }
     ]
   },
-
+  {
+    path: '',
+    component: CenteredLayoutComponent,
+    children: []
+  },
   {
     path: 'home',
     loadChildren: () =>

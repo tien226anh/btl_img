@@ -11,7 +11,7 @@ import { Chapter3Module } from './chapter-3/chapter-3.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
