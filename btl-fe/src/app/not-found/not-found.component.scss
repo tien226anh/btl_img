@@ -1,28 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600,700,800,900|Barlow:300,400,500,600,700,800,900&display=swap");
 
-$font-01: "Barlow",
-  sans-serif;
-$font-02: "Barlow Condensed",
-  sans-serif;
+$font-01: "Barlow", sans-serif;
+$font-02: "Barlow Condensed", sans-serif;
 
-$m-01: #FB8A8A;
-$m-02: #FFEDC0;
+$m-01: #fb8a8a;
+$m-02: #ffedc0;
 
 $bg-01: #695681;
-$bg-02: #36184F;
-$bg-03: #32243E;
+$bg-02: #36184f;
+$bg-03: #32243e;
 
-$g-01: linear-gradient(90deg, #FFEDC0 0%, #FF9D87 100%);
-$g-02: linear-gradient(90deg, #8077EA 13.7%, #EB73FF 94.65%);
+$g-01: linear-gradient(90deg, #ffedc0 0%, #ff9d87 100%);
+$g-02: linear-gradient(90deg, #8077ea 13.7%, #eb73ff 94.65%);
 
 $cubic: cubic-bezier(0.4, 0.35, 0, 1.53);
 $cubic2: cubic-bezier(0.18, 0.89, 0.32, 1.15);
 
-$circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
+$circleShadow:
+  inset 5px 20px 40px rgba($bg-02, 0.25),
   inset 5px 0px 5px rgba($bg-03, 0.3),
   inset 5px 5px 20px rgba($bg-03, 0.25),
   2px 2px 5px rgba(white, 0.2);
-
 
 @mixin sm {
   @media screen and (max-width: 799px) {
@@ -31,7 +29,7 @@ $circleShadow: inset 5px 20px 40px rgba($bg-02, 0.25),
 }
 
 @mixin height {
-  @media screen and (max-height:660px) {
+  @media screen and (max-height: 660px) {
     @content;
   }
 }
@@ -63,7 +61,6 @@ body {
   }
 }
 
-
 body {
   margin: 0;
   padding: 0;
@@ -88,7 +85,6 @@ body {
   backdrop-filter: blur(5px);
 
   img {
-
     width: 55%;
     height: 55%;
     transform: translateY(-1px);
@@ -103,7 +99,7 @@ body {
   align-items: center;
   height: 100vh;
   overflow-x: hidden;
-  background: #8077EA;
+  background: #8077ea;
 
   .container {
     margin: 0 auto;
@@ -163,31 +159,31 @@ body {
 
           animation: pieceLeft 8s cubic-bezier(1, 0.06, 0.25, 1) infinite both;
 
-
           @keyframes pieceLeft {
-            0% {}
+            0% {
+            }
 
             50% {
               left: 80%;
               width: 10%;
             }
 
-            100% {}
-
+            100% {
+            }
           }
 
           @keyframes pieceRight {
-            0% {}
+            0% {
+            }
 
             50% {
               right: 80%;
               width: 10%;
             }
 
-            100% {}
-
+            100% {
+            }
           }
-
         }
       }
 
@@ -246,7 +242,6 @@ body {
         left: 50%;
         transform: translateX(-50%);
 
-
         @include sm {
           width: 100%;
         }
@@ -272,7 +267,6 @@ body {
           font-weight: 600;
           font-size: 12px;
           transition: all 0.3s ease;
-
 
           &:hover {
             box-shadow: 0px 10px 10px -10px rgba($bg-02, 0.5);
@@ -316,8 +310,6 @@ body {
         filter: blur(10px);
         opacity: 0.8;
       }
-
-
     }
 
     // Bigger Circle
@@ -325,7 +317,7 @@ body {
       position: absolute;
 
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         width: 800px;
         height: 800px;
@@ -336,7 +328,6 @@ body {
         transform: translate(-50%, -50%);
         box-shadow: $circleShadow;
         animation: circle 0.8s cubic-bezier(1, 0.06, 0.25, 1) backwards;
-
 
         @keyframes circle {
           0% {
@@ -355,10 +346,9 @@ body {
     // Container 1
     .one {
       .content {
-
         // Smaller Circle
         &:before {
-          content: '';
+          content: "";
           position: absolute;
           width: 600px;
           height: 600px;
@@ -402,10 +392,7 @@ body {
             animation-delay: 1.5s;
             animation-name: pieceLeft;
           }
-
         }
-
-
       }
     }
 
@@ -441,7 +428,6 @@ body {
             animation-delay: 3s;
             animation-name: pieceRight;
           }
-
         }
       }
     }
@@ -478,13 +464,8 @@ body {
             animation-name: pieceLeft;
             animation-delay: 4.5s;
           }
-
         }
-
-
       }
     }
-
-
   }
 }

@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Chapter3Service } from './chapter-3.service';
-import { HttpClient } from '@angular/common/http';
 import { environment as env } from '../../environments/environment';
 import { ImageProcess } from './interface/image-process';
 import { ProcessorType } from './interface/processor-type';
@@ -8,21 +7,17 @@ import { ProcessorType } from './interface/processor-type';
 @Component({
   selector: 'app-chapter-3',
   templateUrl: './chapter-3.component.html',
-  styleUrl: './chapter-3.component.scss'
+  styleUrl: './chapter-3.component.scss',
 })
-export class Chapter3Component implements OnInit, OnDestroy{
-
+export class Chapter3Component implements OnInit, OnDestroy {
   chapter3Hello: string = 'Loading...';
-  processorType : ProcessorType[] = [
+  processorType: ProcessorType[] = [
     { processor_name: 'negative' },
     { processor_name: 'thresholding' },
     { processor_name: 'logarithm' },
-    { processor_name: 'inverse-logarithm' }
+    { processor_name: 'inverse-logarithm' },
   ];
-  twoValueProcessor: string[] = [
-    'logarithm',
-    'inverse-logarithm'
-  ]
+  twoValueProcessor: string[] = ['logarithm', 'inverse-logarithm'];
 
   fileName = '';
   imageProcess: ImageProcess = {};
@@ -31,10 +26,7 @@ export class Chapter3Component implements OnInit, OnDestroy{
   imageState: boolean = false;
   imageUrl = env.imageUrl;
 
-  constructor(
-    private chapter3Service: Chapter3Service,
-    private http: HttpClient
-  ) { }
+  constructor(private chapter3Service: Chapter3Service) {}
 
   ngOnInit(): void {
     this.chapter3Service.getChapter3Hello().subscribe((data: any) => {
@@ -49,7 +41,7 @@ export class Chapter3Component implements OnInit, OnDestroy{
 
   onFileSelected(event: any): void {
     const file: File = event.target.files[0];
-    if(file){
+    if (file) {
       this.fileName = file.name;
       const upload$ = this.chapter3Service.processImage(file, 'negative', '');
 
@@ -57,7 +49,7 @@ export class Chapter3Component implements OnInit, OnDestroy{
         this.imageState = true;
         this.imageProcess = {
           original_image: `${this.imageUrl}${data['original_image']}`,
-          processed_image: `${this.imageUrl}${data['processed_image']}`
+          processed_image: `${this.imageUrl}${data['processed_image']}`,
         };
         console.log(this.imageProcess);
       });
@@ -67,5 +59,12 @@ export class Chapter3Component implements OnInit, OnDestroy{
   onSelectedProcessorType(event: any): void {
     this.selectedProcessorType = event.source.value;
     console.log(this.selectedProcessorType);
+  }
+
+  formatLabel(value: number): string {
+    if (value >= 0.01) {
+      return `${Math.round(value / 0.01)}`;
+    }
+    return `${value}`;
   }
 }

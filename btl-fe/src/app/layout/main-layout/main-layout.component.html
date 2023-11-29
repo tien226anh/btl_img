@@ -1,32 +1,28 @@
 <div id="main-layout">
   <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <img src=""> <!-- Add your logo if available-->
+      <img src="../../../assets/angularlogo.png" alt="" />
+      <!-- Add your logo if available-->
       <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
     </mat-toolbar-row>
   </mat-toolbar>
-  <mat-sidenav-container
-    id="sidenav-container"
-    >
-    <mat-sidenav
-      id="sidenav"
-      #sidenav
-      mode="side"
-      [(opened)]="opened"
-    >
+  <mat-sidenav-container id="sidenav-container">
+    <mat-sidenav id="sidenav" #sidenav mode="side" [(opened)]="opened">
       <mat-nav-list id="navlist">
         <a
           mat-list-item
           [routerLink]="'/'"
           routerLinkActive="active"
           (click)="sidenav.close()"
-        >Home</a>
+          >Home</a
+        >
         <a
           mat-list-item
           [routerLink]="'/chapter3'"
           routerLinkActive="active"
           (click)="sidenav.close()"
-          >Chapter3</a>
+          >Chapter3</a
+        >
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>

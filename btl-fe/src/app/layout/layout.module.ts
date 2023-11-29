@@ -13,13 +13,7 @@ import { CenteredLayoutComponent } from './centered-layout/centered-layout.compo
     MaterialModule,
     FlexLayoutModule,
   ],
-  exports: [
-    MainLayoutComponent,
-    CenteredLayoutComponent,
-  ],
-  declarations: [
-    MainLayoutComponent,
-    CenteredLayoutComponent,
-  ],
+  exports: [MainLayoutComponent, CenteredLayoutComponent],
+  declarations: [MainLayoutComponent, CenteredLayoutComponent],
 })
-export class LayoutModule { }
+export class LayoutModule {}

@@ -4,13 +4,12 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 import { HomeComponent } from './home/home.component';
 import { Chapter3Component } from './chapter-3/chapter-3.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { CenteredLayoutComponent } from './layout/centered-layout/centered-layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: "/home",
-    pathMatch: "full"
+    redirectTo: '/home',
+    pathMatch: 'full',
   },
   {
     path: '',
@@ -27,18 +26,12 @@ const routes: Routes = [
       {
         path: '**',
         component: NotFoundComponent,
-      }
-    ]
-  },
-  {
-    path: '',
-    component: CenteredLayoutComponent,
-    children: []
+      },
+    ],
   },
   {
     path: 'home',
-    loadChildren: () =>
-      import('./home/home.module').then((m) => m.HomeModule),
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'chapter3',
@@ -54,6 +47,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

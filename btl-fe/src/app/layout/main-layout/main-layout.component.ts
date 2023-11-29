@@ -1,15 +1,16 @@
-import { Component, ViewChild } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main-layout',
   templateUrl: './main-layout.component.html',
-  styleUrl: './main-layout.component.scss'
+  styleUrl: './main-layout.component.scss',
 })
-export class MainLayoutComponent {
+export class MainLayoutComponent implements OnInit {
   opened: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit (): void {};
+  ngOnInit(): void {
+    return;
+  }
 }

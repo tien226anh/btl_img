@@ -1,6 +1,6 @@
 <div>
   <h1>
-    {{chapter3Hello}}
+    {{ chapter3Hello }}
   </h1>
   <mat-card>
     <mat-card-header>
@@ -9,45 +9,64 @@
         <mat-select>
           @for (type of processorType; track $index) {
             <mat-option
-              value="{{type.processor_name}}"
+              value="{{ type.processor_name }}"
               (onSelectionChange)="onSelectedProcessorType($event)"
             >
-              {{type.processor_name}}
+              {{ type.processor_name }}
             </mat-option>
           }
         </mat-select>
       </mat-form-field>
       @if (twoValueProcessor.includes(selectedProcessorType)) {
-          <mat-label>C value</mat-label>
-          <mat-slider
-            max="1"
-            step="0.1"
-          ></mat-slider>
-      } @else {
-      }
-      </mat-card-header>
+        <mat-label>C value</mat-label>
+        <mat-slider
+          max="1"
+          step="0.01"
+          showTickMarks
+          discrete
+          [displayWith]="formatLabel"
+        >
+          <input matSliderThumb />
+        </mat-slider>
+      } @else {}
+    </mat-card-header>
     <mat-card-content class="card-content">
       <input
         #fileUpload
         type="file"
         id="file-input"
         (change)="onFileSelected($event)"
-      >
+      />
       <div class="file-upload">
-        {{ fileName || 'No file selected yet.' }}
-        <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+        {{ fileName || "No file selected yet." }}
+        <button
+          mat-mini-fab
+          color="primary"
+          class="upload-btn"
+          (click)="fileUpload.click()"
+        >
           <mat-icon>attach_file</mat-icon>
         </button>
       </div>
       <div class="result">
-        @if (imageState){
+        @if (imageState) {
           <div>
             <p>Origin</p>
-            <img mat-card-image [src]="imageProcess['original_image']" alt="Selected image" class="image-process">
+            <img
+              mat-card-image
+              [src]="imageProcess['original_image']"
+              alt="Selected image"
+              class="image-process"
+            />
           </div>
           <div>
             <p>Processed</p>
-            <img mat-card-image [src]="imageProcess['processed_image']" alt="Selected image" class="image-process">
+            <img
+              mat-card-image
+              [src]="imageProcess['processed_image']"
+              alt="Selected image"
+              class="image-process"
+            />
           </div>
         }
       </div>
