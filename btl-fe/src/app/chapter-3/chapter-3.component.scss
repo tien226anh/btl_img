@@ -1,7 +1,3 @@
-#file-input
-{
-    display: none;
-}
 div
 {
   display: flex;
@@ -38,7 +34,11 @@ div
         {
           width: 70%;
         }
-      }
+      };
+      #file-input
+      {
+          display: none;
+      };
     }
   }
 }
