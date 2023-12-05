@@ -2,18 +2,22 @@
 
 ## Description
 
-This repository is a webapp that allow users to choose an image and apply some filters to it.
+This repository has an ipynb file that contains the code for the image processing assignment. The code is written in python and uses the following libraries:
 
-## Installation
+- numpy
+- matplotlib
+- python-opencv
 
-### Backend - Python(3.11) - FastAPI - Uvicorn
+## How to run
 
-1. Create a virtual environment with python 3.11
-2. Activate the virtual environment
-3. Install the requirements with `pip install -r requirements.txt`
-4. Run the server with `python main.py`
+To run the code, you need to have python installed on your computer. You can download python from [here](https://www.python.org/downloads/). You also need to have the following libraries installed:
 
-### Frontend - React - Typescript(Node 20.10.0)
+- numpy
+- matplotlib
+- python-opencv
 
-1. Install the dependencies with `yarn install`
-2. Run the server with `yarn dev`
+To install these libraries, you can use the following command:
+
+```bash
+pip install numpy matplotlib opencv-python
+```
