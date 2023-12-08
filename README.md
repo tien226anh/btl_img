@@ -27,9 +27,9 @@ This repository has an ipynb file that contains the code for the image processin
   - Đẳng liệu
 - Xử lý hình thái
   - Phép co
-	- Phép giãn
+  - Phép giãn
   - Phép mở ảnh
-	- Phép đóng ảnh
+  - Phép đóng ảnh
 
 ## How to run
 
