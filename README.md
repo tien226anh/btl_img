@@ -18,10 +18,10 @@ This repository has an ipynb file that contains the code for the image processin
 - Làm mịn ảnh:
   - Bộ lọc trung vị
   - Bộ lọc trung bình
-- Phát hiện biên: 
+- Phát hiện biên:
   - Gradient: Robert, sobel, prewitt
-	- Đạo hàm bậc 2: Laplacian
-	- Phát hiện biên tối ưu: canny
+  - Đạo hàm bậc 2: Laplacian
+  - Phát hiện biên tối ưu: canny
 - Phân vùng theo ngưỡng biên độ
   - Otsu
   - Đẳng liệu
